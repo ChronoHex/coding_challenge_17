@@ -4,7 +4,7 @@ class Customer {
         this.name = name;
         this.email = email;
         this.purchaseHistory = [];
-    }; // constructor for customer class
+    } // constructor for customer class
 
     addPurchase(amount) {
         this.purchaseHistory.push(amount); // add purchase to purchase history
@@ -26,7 +26,7 @@ class SalesRep {
     constructor(name) {
         this.name = name;
         this.clients = [];
-    }; // constructor for sales rep class
+    } // constructor for sales rep class
 
     addClient(customer) {
         this.clients.push(customer); // adding clients to sales rep
@@ -39,7 +39,7 @@ class SalesRep {
 }
 
 // example for task 2
-const salesRep1 = new SalesRep("Gerladine Smith");
+const salesRep1 = new SalesRep("Geraldine Smith");
 salesRep1.addClient(customer1);
 
 console.log(`Sales rep: ${salesRep1.name}, Client: ${customer1.name}, Total spent: $${salesRep1.getClientTotal("Richard Biggs")}`);
