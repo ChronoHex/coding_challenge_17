@@ -62,3 +62,31 @@ const vipCustomer = new VIPCustomer("Joe Smoe", "joe@gmail.com", "Platinum");
 vipCustomer.addPurchase(200);
 vipCustomer.addPurchase(300);
 console.log(`VIP customer: ${vipCustomer.name}, Total spent with bonus: $${vipCustomer.getTotalSpent()}`);
+
+// task 4
+const customer2 = new Customer("Emma Brown", "emma@gmail.com");
+customer2.addPurchase(600);
+customer2.addPurchase(100);
+
+const customer3 = new VIPCustomer("Mark Taylor", "mark@gmail.com", "Gold");
+customer3.addPurchase(400);
+
+salesRep1.addClient(customer2);
+salesRep1.addClient(customer3);
+
+const allCustomers = [customer1, customer2, customer3, vipCustomer];
+
+// Total revenue from all customers
+const totalRevenue = allCustomers.reduce((total, customer) => total + customer.getTotalSpent(), 0);
+console.log(`Total revenue: $${totalRevenue}`);
+
+// Customers who spent over $500
+const highSpendingCustomers = allCustomers.filter(customer => customer.getTotalSpent() > 500);
+console.log("High-spending customers:", highSpendingCustomers.map(c => c.name));
+
+// Array of customer names and their total spent
+const customerSummary = allCustomers.map(customer => ({
+    name: customer.name,
+    totalSpent: customer.getTotalSpent()
+}));
+console.log("Customer Summary:", customerSummary);
